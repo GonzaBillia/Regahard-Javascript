@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../media/fuentes/Roboto-Regular.ttf);
+  font-size: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto-bold";
+  src: url(../../media/fuentes/Roboto-Bold.ttf);
+  font-size: bold;
+  font-weight: 700;
+}
+body {
+  font-family: "Roboto";
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto-bold";
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../../media/fuentes/Roboto-Regular.ttf);
+    font-size: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url(../../media/fuentes/Roboto-Bold.ttf);
+    font-size: bold;
+    font-weight: 700;
+}
+
+$font-titulo: 'Roboto-bold';
+$font-parrafo: 'Roboto';
+
+body{
+    font-family: $font-parrafo;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: $font-titulo;
+}

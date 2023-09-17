@@ -1,0 +1,17 @@
+// Basics
+@import './basics/colors.scss';
+@import './basics/tipografia.scss';
+@import './basics/mixins.scss';
+@import './basics/buttons.scss';
+
+//layout
+@import './layout/wrapper.scss';
+@import './layout/header.scss';
+@import './layout/main.scss';
+@import './layout/footer.scss';
+
+//paginas
+
+@import './paginas/index.scss';
+@import './paginas/armar-pc.scss';
+@import './paginas/carrito.scss';
