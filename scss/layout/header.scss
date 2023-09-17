@@ -53,11 +53,11 @@ nav{
     background-color: $color-header-secundario;
     padding: 0 150px;
     .col-xl-2{
-        width: 8.66666667%;
+    width: 10.66666667%;
     }
-    .central{
-        height: 100%;
-        background-color: $color-primario;
+    .btn-outline-light:hover{
+        color: $color-header-secundario;
+        border-color: $color-header-secundario;
     }
 
     .categorias{

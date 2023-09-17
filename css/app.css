@@ -99,11 +99,11 @@ nav {
   padding: 0 150px;
 }
 .header-2-row .col-xl-2 {
-  width: 8.66666667%;
+  width: 10.66666667%;
 }
-.header-2-row .central {
-  height: 100%;
-  background-color: #0071BC;
+.header-2-row .btn-outline-light:hover {
+  color: #480748;
+  border-color: #480748;
 }
 .header-2-row .categorias {
   display: flex;
