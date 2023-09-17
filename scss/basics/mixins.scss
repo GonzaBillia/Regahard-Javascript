@@ -1,0 +1,22 @@
+@mixin flexbox($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin Mediaquery($max-width){
+    @Media(max-width:$max-width){
+        @content;
+    }
+}
+
+@mixin reset(){
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@mixin resetCustom($margin, $padding){
+    margin: $margin !important;
+    padding: $padding !important;
+}
