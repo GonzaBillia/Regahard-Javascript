@@ -126,34 +126,4 @@ nav {
   background-repeat: no-repeat;
 }
 
-#carrusel_wrapper {
-  padding: 15px;
-  background: linear-gradient(90deg, rgb(223, 27, 190) 0%, rgb(139, 18, 175) 75%);
-}
-
-#carousel_principales_categorias .card {
-  border-width: 0;
-  margin: 0 0.5em;
-}
-#carousel_principales_categorias .card-body {
-  padding: 0;
-}
-#carousel_principales_categorias .card-img-overlay {
-  top: auto;
-  margin-bottom: 10px;
-}
-@media screen and (min-width: 576px) {
-  #carousel_principales_categorias .carousel-inner {
-    display: flex;
-  }
-  #carousel_principales_categorias .carousel-item {
-    display: block;
-    margin-right: 0;
-    flex: 0 0 20%;
-  }
-}
-#carousel_principales_categorias .carousel-inner {
-  padding: 1em;
-}
-
 /*# sourceMappingURL=app.css.map */
