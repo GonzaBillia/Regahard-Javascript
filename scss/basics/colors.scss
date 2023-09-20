@@ -8,4 +8,5 @@ $color-texto-card: black;
 $color-primario: #0071BC;
 $color-secundario: #93278F;
 
-$color-gradiente-primario: linear-gradient(90deg, $color-primario 25%, $color-secundario 75%);
+$color-gradiente-primario: linear-gradient(90deg, rgba(0, 113, 188, 1) 0%, rgba(147, 39, 143, 1) 75%);
+$color-gradiente-secundario: linear-gradient(90deg, rgb(223, 27, 190) 0%, rgb(139, 18, 175) 75%);

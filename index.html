@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/app.css">
     <title>REGAHARD | Inicio</title>
 </head>
@@ -20,29 +20,40 @@
                     <div class="row header-1-row">
                         <div class="col-8 col-xl-4">
                             <div class="logo">
-                                <a href="./index.html"><img src="./media/imagenes/logo/logo-white.png" alt="Logo" class= "logo-img"></a>
+                                <a href="./index.html"><img src="./media/imagenes/logo/logo-white.png" alt="Logo"
+                                        class="logo-img"></a>
                             </div>
                         </div>
                         <div class="col-8 col-xl-4">
                             <form class="d-flex mt-3 input-group" role="search">
-                                <input class="form-control rounded-start-pill" type="text" placeholder="Buscar" aria-label="Search" aria-describedby="button-addon2">
-                                <button class="btn btn-light rounded-end-circle" type="sbutton" id="button-addon2"><i class="bi bi-search"></i></button>
+                                <input class="form-control rounded-start-pill" type="text" placeholder="Buscar"
+                                    aria-label="Search" aria-describedby="button-addon2">
+                                <button class="btn btn-light rounded-end-circle" type="sbutton" id="button-addon2"><i
+                                        class="bi bi-search"></i></button>
                             </form>
                         </div>
                         <div class="col-8 col-xl-4 user-cart">
-                            <button class="btn btn-dark btn-user"><i class="bi bi-person-circle"></i></button>
-                            <button class="btn btn-dark position-relative btn-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-cart2"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                0
-                                <span class="visually-hidden">productos en carrito</span>
-                                </span></i>
+                            <a href="paginas/login.html">
+                                <button class="btn btn-dark btn-user"><i class="bi bi-person-circle"></i></button>
+                            </a>
+                            <button class="btn btn-dark position-relative btn-cart" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i
+                                    class="bi bi-cart2"><span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                        <span class="visually-hidden">productos en carrito</span>
+                                    </span></i>
                             </button>
-                            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+                                aria-labelledby="offcanvasNavbarLabel">
                                 <div class="offcanvas-header">
                                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrito</h5>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
-    
+
                                 </div>
                             </div>
                         </div>
@@ -50,39 +61,188 @@
                     <div class="row header-2-row">
                         <div class="col-xl-5">
                             <ul class="categorias">
-                                <li class="item-categoria">PCs</li>
-                                <li class="item-categoria">Notebooks</li>
-                                <li class="item-categoria">Monitores</li>
-                                <li class="item-categoria">Componentes</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">PCs</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Notebooks</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Monitores</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Componentes</li>
                             </ul>
                         </div>
-                        <div class="col-xl-2 p-0">
-                            <button class="btn btn-outline-light">Arma Tu PC</button>
+                        <div class="col-xl-2 p-0 d-flex justify-content-center">
+                            <a href="paginas/armar-pc.html">
+                                <button class="btn btn-outline-light">Arma Tu PC</button>
+                            </a>
                         </div>
                         <div class="col-xl-5">
                             <ul class="categorias">
-                                <li class="item-categoria">Periféricos</li>
-                                <li class="item-categoria">Accesorios</li>
-                                <li class="item-categoria">Redes</li>
-                                <li class="item-categoria">Promociones</li>
+                                <li class="item-categoria" tabindex="0" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Periféricos</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Accesorios</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Redes</li>
+                                <li class="item-categoria" tabindex="0" data-bs-trigger="focus" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom"
+                                    data-bs-content="Not Programed Yet">Promociones</li>
                             </ul>
                         </div>
-                        
+
                     </div>
                 </div>
 
-            </nav> 
+            </nav>
 
         </header>
 
         <main id="main">
+            <section id="slider">
+                <div id="carouselExampleFade" data-bs-ride="carousel" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/media/imagenes/slider/aorus.jpg" class="d-block w-100" alt="aorus">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/imagenes/slider/asus.jpg" class="d-block w-100" alt="asus">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/imagenes/slider/corsair.jpg" class="d-block w-100" alt="corsair">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/imagenes/slider/fury.jpg" class="d-block w-100" alt="fury">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/imagenes/slider/logitech.jpg" class="d-block w-100" alt="logitech">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/imagenes/slider/nvidia.jpg" class="d-block w-100" alt="nvidia">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+            <section id="principales_categorias">
+                <div id="carrusel_wrapper">
+                    <div id="carousel_principales_categorias" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">PCs</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Notebooks</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Monitores</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Componentes</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Perifericos</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Accesorios</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Redes</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img src="/media/imagenes/categorias/procesador.jpg" class="card-img-top" alt="...">
+                                        <div class="card-img-overlay text-white">
+                                            <h5 class="card-title">Promociones</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_principales_categorias"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel_principales_categorias"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
 
         </main>
 
         <footer id="footer">
 
         </footer>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
