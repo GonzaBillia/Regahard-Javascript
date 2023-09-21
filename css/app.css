@@ -118,12 +118,44 @@ nav {
   color: white;
 }
 
+main {
+  margin-top: 120px;
+}
+
 #slider {
   margin-top: 120px;
   margin-bottom: 40px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.btn-armar .btn-outline-light {
+  background-color: white;
+  color: #480748;
+  border-color: #480748;
+}
+
+#contenedor-armar-pc {
+  padding: 30px 0;
+}
+
+#categoria-componentes h2 {
+  padding: 25px 9;
+}
+#categoria-componentes .lista-componentes .card {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#categoria-componentes .lista-componentes .card img {
+  max-width: 120px;
+  margin: 15px 0;
+}
+
+#display-carrito h2 {
+  padding: 25px 0;
 }
 
 /*# sourceMappingURL=app.css.map */
