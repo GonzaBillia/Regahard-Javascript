@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "tipoItem": "Micropocesador",
+        "marca": "AMD",
+        "modelo": "Ryzen 3 3200G",
+        "precio": 89000,
+        "stock": 10,
+        "img": "media/imagenes/productos/micro-ryzen3-3200g-8843.jpg",
+        "alt": "Ryzen 3 3200G"
+    },
+    {
+        "id": 2,
+        "tipoItem": "Micropocesador",
+        "marca": "AMD",
+        "modelo": "Ryzen 5 5600G",
+        "precio": 126000,
+        "stock": 10,
+        "img": "media/imagenes/productos/ryzen-5-5600g-440ghz-1948.jpg",
+        "alt": "Ryzen 3 3200G"
+    },
+    {
+        "id": 3,
+        "tipoItem": "Micropocesador",
+        "marca": "AMD",
+        "modelo": "Ryzen 7 5700G",
+        "precio": 189000,
+        "stock": 10,
+        "img": "media/imagenes/productos/amd-ryzen-7-5700g-01-2356.jpg",
+        "alt": "Ryzen 7 5700G"
+    }
+    
+]
