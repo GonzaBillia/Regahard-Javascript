@@ -28,6 +28,155 @@
         "stock": 10,
         "img": "media/imagenes/productos/amd-ryzen-7-5700g-01-2356.jpg",
         "alt": "Ryzen 7 5700G"
+    },
+    {
+        "id": 4,
+        "tipoItem": "Placa Madre",
+        "marca": "MSI",
+        "modelo": "A320M",
+        "precio": 49000,
+        "stock": 10,
+        "img": "media/imagenes/productos/mother-msi-a320ma-pro-0.jpg",
+        "alt": "A320M"
+    },
+    {
+        "id": 5,
+        "tipoItem": "Placa Madre",
+        "marca": "Gigabyte",
+        "modelo": "A520M",
+        "precio": 63000,
+        "stock": 10,
+        "img": "media/imagenes/productos/mother-gigabyte-a520m-k-v2-ddr4-am4-0.jpg",
+        "alt": "A520M"
+    },
+    {
+        "id": 6,
+        "tipoItem": "Placa Madre",
+        "marca": "Gigabyte",
+        "modelo": "A520M",
+        "precio": 89000,
+        "stock": 10,
+        "img": "media/imagenes/productos/mother-gigabyte-b550m-ds3h-0.jpg",
+        "alt": "B550M"
+    },
+    {
+        "id": 7,
+        "tipoItem": "Disco",
+        "marca": "Kingston",
+        "modelo": "A400 240GB",
+        "precio": 17000,
+        "stock": 10,
+        "img": "media/imagenes/productos/hd-ssd-240gb-kingston-a400-sata-iii-25-0.jpg",
+        "alt": "A400 240GB"
+    },
+    {
+        "id": 8,
+        "tipoItem": "Disco",
+        "marca": "Kingston",
+        "modelo": "A400 480GB",
+        "precio": 23000,
+        "stock": 10,
+        "img": "media/imagenes/productos/hd-ssd-480gb-kingston-a400-sata-iii-25-0.jpg",
+        "alt": "A400 480GB"
+    },
+    {
+        "id": 9,
+        "tipoItem": "Disco",
+        "marca": "Kingston",
+        "modelo": "A400 960GB",
+        "precio": 37000,
+        "stock": 10,
+        "img": "media/imagenes/productos/hd-ssd-960gb-kingston-a400-sata-iii-25-0.jpg",
+        "alt": "A400 960GB"
+    },
+    {
+        "id": 10,
+        "tipoItem": "Memoria Ram",
+        "marca": "Crucial",
+        "modelo": "8GB 2666mhz",
+        "precio": 15000,
+        "stock": 10,
+        "img": "media/imagenes/productos/memoria-8gb-ddr4-2666-crucial-0.jpg",
+        "alt": "Crucial"
+    },
+    {
+        "id": 11,
+        "tipoItem": "Memoria Ram",
+        "marca": "Kingston",
+        "modelo": "Fury Beast 8GB 3200mhz",
+        "precio": 19000,
+        "stock": 10,
+        "img": "media/imagenes/productos/memoria-8gb-ddr4-2666-kingston-fury-beast-0.jpg",
+        "alt": "Fury Beast 8GB 3200mhz"
+    },
+    {
+        "id": 12,
+        "tipoItem": "Memoria Ram",
+        "marca": "Hyper X",
+        "modelo": "Fury RGB 16GB 3200mhz",
+        "precio": 33000,
+        "stock": 10,
+        "img": "media/imagenes/productos/memoria-8gb-ddr4-3200-kingston-fury-beast-white-rgb-0.jpg",
+        "alt": "Fury RGB 16GB 3200mhz"
+    },
+    {
+        "id": 13,
+        "tipoItem": "Fuente",
+        "marca": "Gigabyte",
+        "modelo": "650W",
+        "precio": 35000,
+        "stock": 10,
+        "img": "media/imagenes/productos/1078-producto-fuente-gigabyte-p650b-650w-80-plus-bronze-black-pngp-p650b1-8105.jpg",
+        "alt": "650W"
+    },
+    {
+        "id": 14,
+        "tipoItem": "Fuente",
+        "marca": "Gigabyte",
+        "modelo": "750W",
+        "precio": 48000,
+        "stock": 10,
+        "img": "media/imagenes/productos/fuente-750w-gigabyte-p750gm-80-plus-gold-modular-0.jpg",
+        "alt": "750W"
+    },
+    {
+        "id": 15,
+        "tipoItem": "Fuente",
+        "marca": "Gigabyte",
+        "modelo": "850W",
+        "precio": 56000,
+        "stock": 10,
+        "img": "media/imagenes/productos/fuente-850w-gigabyte-p850gm-80-plus-gold-modular-0.jpg",
+        "alt": "850W"
+    },
+    {
+        "id": 16,
+        "tipoItem": "Gabinete",
+        "marca": "Performance",
+        "modelo": "ATX",
+        "precio": 56000,
+        "stock": 10,
+        "img": "media/imagenes/productos/gabinete2801Performance.jpg",
+        "alt": "ATX"
+    },
+    {
+        "id": 17,
+        "tipoItem": "Gabinete",
+        "marca": "Gamemax",
+        "modelo": "Nova N5",
+        "precio": 56000,
+        "stock": 10,
+        "img": "media/imagenes/productos/gabinete-gamemax-nova-n5-1-fan-rgb-0.jpg",
+        "alt": "Nova N5"
+    },
+    {
+        "id": 18,
+        "tipoItem": "Gabinete",
+        "marca": "Thermaltake",
+        "modelo": "N200",
+        "precio": 56000,
+        "stock": 10,
+        "img": "media/imagenes/productos/gabinete-thermaltake-h570-tg-3-fan-argb-mesh-snow-white-0.jpg",
+        "alt": "N200"
     }
-    
 ]
