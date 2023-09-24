@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/app.css">
     <title>REGAHARD | Arma Tu PC</title>
 </head>
@@ -20,29 +20,47 @@
                     <div class="row header-1-row">
                         <div class="col-8 col-xl-4">
                             <div class="logo">
-                                <a href="../index.html"><img src="../media/imagenes/logo/logo-white.png" alt="Logo" class= "logo-img"></a>
+                                <a href="../index.html"><img src="../media/imagenes/logo/logo-white.png" alt="Logo"
+                                        class="logo-img"></a>
                             </div>
                         </div>
                         <div class="col-8 col-xl-4">
                             <form class="d-flex mt-3 input-group" role="search">
-                                <input class="form-control rounded-start-pill" type="text" placeholder="Buscar" aria-label="Search" aria-describedby="button-addon2">
-                                <button class="btn btn-light rounded-end-circle" type="sbutton" id="button-addon2"><i class="bi bi-search"></i></button>
+                                <input class="form-control rounded-start-pill" type="text" placeholder="Buscar"
+                                    aria-label="Search" aria-describedby="button-addon2">
+                                <button class="btn btn-light rounded-end-circle" type="sbutton" id="button-addon2"><i
+                                        class="bi bi-search"></i></button>
                             </form>
                         </div>
                         <div class="col-8 col-xl-4 user-cart">
                             <button class="btn btn-dark btn-user"><i class="bi bi-person-circle"></i></button>
-                            <button class="btn btn-dark position-relative btn-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i class="bi bi-cart2"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                0
-                                <span class="visually-hidden">productos en carrito</span>
-                                </span></i>
+                            <button class="btn btn-dark position-relative btn-cart" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i
+                                    class="bi bi-cart2"><span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                        <span class="visually-hidden">productos en carrito</span>
+                                    </span></i>
                             </button>
-                            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+                                aria-labelledby="offcanvasNavbarLabel">
                                 <div class="offcanvas-header">
                                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrito</h5>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body">
-    
+                                <div class="offcanvas-body contenedor_carrito">
+
+                                </div>
+                                <div id="total" class="p-3 d-flex align-items-end">
+                                    <p>Total: $
+                                    <p id="calcular_total"></p>
+                                    </p>
+                                </div>
+                                <div id="btn_carrito" class="d-flex align-items-end justify-content-evenly p-3 mb-3">
+                                    <button id="limpiar_carrito" class="btn btn-light">Limpiar Carrito</button>
+                                    <button id="finalizar_compra" class="btn btn-light">Finalizar Compra</button>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +83,7 @@
                             </ul>
                         </div>
                         <div class="col-xl-2 p-0 d-flex justify-content-center btn-armar">
-                                <button class="btn btn-outline-light">Arma Tu PC</button>
+                            <button class="btn btn-outline-light">Arma Tu PC</button>
                         </div>
                         <div class="col-xl-5">
                             <ul class="categorias">
@@ -87,7 +105,7 @@
                     </div>
                 </div>
 
-            </nav> 
+            </nav>
 
         </header>
 
@@ -97,30 +115,168 @@
                 <div class="row justify-content-around">
                     <section id="categoria-componentes" class="col-xl-7 text-center border rounded">
                         <h2>Lista de Componentes</h2>
-                        <div class="row justify-content-evenly lista-componentes">
-                            <div class="btn col-xl-4 card align-items-center">
+                        <div class="row justify-content-evenly lista-componentes" data-bs-toggle="modal"
+                            data-bs-target="#modalMicros">
+                            <div id="boton-micros" class="btn col-xl-4 card align-items-center">
                                 <img src="../media/imagenes/herramientas/cpu.png" alt="CPU">
                                 <h5>Microprocesador</h5>
+
+                                <div class="modal fade" id="modalMicros" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Microprocesadores
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_microprocesadores" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn col-xl-4 card align-items-center">
+                            <div id="boton-placas" class="btn col-xl-4 card align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modalPlacasMadre">
                                 <img src="../media/imagenes/herramientas/motherboard.png" alt="MB">
                                 <h5>Placa Madre</h5>
+
+                                <div class="modal fade" id="modalPlacasMadre" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Placas Madre
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_placasmadre" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn col-xl-4 card align-items-center">
+                            <div id="boton-discos" class="btn col-xl-4 card align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modalDiscos">
                                 <img src="../media/imagenes/herramientas/ssd-card.png" alt="SSD">
                                 <h5>Disco Solido</h5>
+
+                                <div class="modal fade" id="modalDiscos" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Discos Solidos
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_discos" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn col-xl-4 card align-items-center">
+                            <div id="boton-memorias" class="btn col-xl-4 card align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modalMemorias">
                                 <img src="../media/imagenes/herramientas/memory.png" alt="RAM">
                                 <h5>Memoria RAM</h5>
+
+                                <div class="modal fade" id="modalMemorias" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Memorias RAM
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_memorias" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn col-xl-4 card align-items-center">
+                            <div id="boton-fuentes" class="btn col-xl-4 card align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modalFuentes">
                                 <img src="../media/imagenes/herramientas/psu.png" alt="PSU">
                                 <h5>Fuente</h5>
+
+                                <div class="modal fade" id="modalFuentes" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Fuentes
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_fuentes" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn col-xl-4 card align-items-center">
+                            <div id="boton-gabinetes" class="btn col-xl-4 card align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modalGabinetes">
                                 <img src="../media/imagenes/herramientas/computer-case.png" alt="CASE">
                                 <h5>Gabinete</h5>
+
+                                <div class="modal fade" id="modalGabinetes" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Gabinetes
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div id="contenedor_gabinetes" class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -128,9 +284,9 @@
                         <h2>Tu Pedido</h2>
                     </section>
                 </div>
-                
+
             </div>
-            
+
         </main>
 
         <footer id="footer">

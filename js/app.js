@@ -6,6 +6,16 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 //Local Storage
 const localStorageKey = "ListaCarrito";
 //Local Storage
+
+//Consultar API
+async function consumirAPI(){
+    let respJSON = await fetch('../API.json')
+    let listaproductosJS = await respJSON.json()
+
+    return listaproductosJS
+}
+//ConsultarAPI
+
 //Objetos
 
 class Producto {
@@ -57,13 +67,30 @@ class ProductoController{
         this.listaProductos.push(producto)
     }
 
-    mostrarProductos(arrayProducto, contenedor) {
+    async mostrarProductos(contenedor, tipoItem) {
+        await this.convertirProductosDeAPI()
+        let arrayProducto = []
+
+
+        this.listaProductos.forEach(producto=>{
+            if(producto.tipoItem === tipoItem){
+                arrayProducto.push(producto)
+            }
+        })
+        console.log(arrayProducto)
+
         let contenedorProductos = document.getElementById(contenedor)
 
         arrayProducto.forEach(producto => {
-            contenedorProductos.innerHTML += producto.descripcionProducto();
-        });
-    
+            if(contenedorProductos != null){
+                contenedorProductos.innerHTML += producto.descripcionProducto();
+            }
+            
+        })
+    }
+
+    agregarAlCarrito(){
+        let arrayProducto = []
         arrayProducto.forEach(producto => {
             const btn_ap = document.getElementById(`ap-${producto.id}`)
     
@@ -76,7 +103,20 @@ class ProductoController{
             })
         });
     }
+
+    async convertirProductosDeAPI(){
+        let respJSON = await fetch('../API.json')
+        let listaProductosJS = await respJSON.json()
+
+        const listaAux = []
+        listaProductosJS.forEach(producto => {
+            let nuevoProducto = new Producto(producto.id, producto.tipoItem, producto.marca, producto.modelo, producto.precio, producto.stock, producto.img)
+            listaAux.push(nuevoProducto);
+        })
+        this.listaProductos = listaAux
+    }
 }
+
 
 class Carrito {
     constructor() {
@@ -192,6 +232,25 @@ class Carrito {
 
 //Inicializadores
 
-const carrito = new Carrito()
+let PC = new ProductoController()
+let carrito = new Carrito()
+
+PC.convertirProductosDeAPI()
+
+
+const contenedor_micros = document.getElementById("contenedor_microprocesadores");
+const contenedor_placasmadre = document.getElementById("contenedor_placasmadre");
+const contenedor_discos = document.getElementById("contenedor_discos");
+const contenedor_memorias = document.getElementById("contenedor_memorias");
+const contenedor_fuentes = document.getElementById("contenedor_fuentes");
+const contenedor_gabinetes = document.getElementById("contenedor_gabinetes");
+
+PC.mostrarProductos(contenedor_micros, "Micropocesador")
+PC.mostrarProductos(contenedor_placasmadre, "Placa Madre")
+PC.mostrarProductos(contenedor_discos, "Disco")
+PC.mostrarProductos(contenedor_memorias, "Memoria Ram")
+PC.mostrarProductos(contenedor_fuentes, "Fuente")
+PC.mostrarProductos(contenedor_gabinetes, "Gabinete")
 
 //Inicializadores
+
