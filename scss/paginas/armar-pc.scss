@@ -5,7 +5,7 @@
 }
 
 #contenedor-armar-pc{
-    padding: 30px 0;;
+    padding: 30px 0;
 }
 
 #categoria-componentes{
@@ -13,7 +13,7 @@
         padding: 25px 9;
     }
     .lista-componentes{
-        .card{
+        #boton-micros, #boton-placas, #boton-discos, #boton-memorias, #boton-fuentes, #boton-gabinetes{
             width: 200px;
             height: 200px;
             padding: 10px;
@@ -22,6 +22,15 @@
                 max-width: 120px;
                 margin: 15px 0;
             }
+        }
+    }
+    .modal-body{
+        @include flexbox(row, center, top);
+        .card{
+            img{
+                margin: 15px 0;
+            }
+            align-items: center;
         }
     }
 }

@@ -143,14 +143,26 @@ main {
 #categoria-componentes h2 {
   padding: 25px 9;
 }
-#categoria-componentes .lista-componentes .card {
+#categoria-componentes .lista-componentes #boton-micros, #categoria-componentes .lista-componentes #boton-placas, #categoria-componentes .lista-componentes #boton-discos, #categoria-componentes .lista-componentes #boton-memorias, #categoria-componentes .lista-componentes #boton-fuentes, #categoria-componentes .lista-componentes #boton-gabinetes {
   width: 200px;
   height: 200px;
   padding: 10px;
   margin-bottom: 10px;
 }
-#categoria-componentes .lista-componentes .card img {
+#categoria-componentes .lista-componentes #boton-micros img, #categoria-componentes .lista-componentes #boton-placas img, #categoria-componentes .lista-componentes #boton-discos img, #categoria-componentes .lista-componentes #boton-memorias img, #categoria-componentes .lista-componentes #boton-fuentes img, #categoria-componentes .lista-componentes #boton-gabinetes img {
   max-width: 120px;
+  margin: 15px 0;
+}
+#categoria-componentes .modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+}
+#categoria-componentes .modal-body .card {
+  align-items: center;
+}
+#categoria-componentes .modal-body .card img {
   margin: 15px 0;
 }
 

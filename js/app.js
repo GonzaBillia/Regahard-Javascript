@@ -49,13 +49,15 @@ class Producto {
 
     descripcionProducto() {
         return `<div class="card" style="width: 15rem;">
-        <img src="${this.img}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">${this.marca}  ${this.modelo}</h5>
-        <p class="card-text">Precio: $${this.precio}</p>
-        <button class="btn btn-primary" id= "ap-${this.id}">Añadir al Carrito</button>
-        </div>
-        </div>`
+                    <img src="${this.img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${this.marca}  ${this.modelo}</h5>
+                        <p class="card-text">Precio: $${this.precio}</p>
+                    </div>
+                    <div class="card-body d-flex align-items-end">
+                        <button class="btn btn-primary" id= "ap-${this.id}">Añadir al Carrito</button>
+                    </div>
+                </div>`
     }
 }
 
@@ -78,14 +80,16 @@ class ProductoController{
             }
         })
         console.log(arrayProducto)
+        this.renderizarProductos(arrayProducto, contenedor)
+    }
 
+    renderizarProductos(arreglo, contenedor){
         let contenedorProductos = document.getElementById(contenedor)
 
-        arrayProducto.forEach(producto => {
+        arreglo.forEach(producto => {
             if(contenedorProductos != null){
                 contenedorProductos.innerHTML += producto.descripcionProducto();
             }
-            
         })
     }
 
@@ -235,22 +239,13 @@ class Carrito {
 let PC = new ProductoController()
 let carrito = new Carrito()
 
-PC.convertirProductosDeAPI()
 
-
-const contenedor_micros = document.getElementById("contenedor_microprocesadores");
-const contenedor_placasmadre = document.getElementById("contenedor_placasmadre");
-const contenedor_discos = document.getElementById("contenedor_discos");
-const contenedor_memorias = document.getElementById("contenedor_memorias");
-const contenedor_fuentes = document.getElementById("contenedor_fuentes");
-const contenedor_gabinetes = document.getElementById("contenedor_gabinetes");
-
-PC.mostrarProductos(contenedor_micros, "Micropocesador")
-PC.mostrarProductos(contenedor_placasmadre, "Placa Madre")
-PC.mostrarProductos(contenedor_discos, "Disco")
-PC.mostrarProductos(contenedor_memorias, "Memoria Ram")
-PC.mostrarProductos(contenedor_fuentes, "Fuente")
-PC.mostrarProductos(contenedor_gabinetes, "Gabinete")
+PC.mostrarProductos("contenedor_microprocesadores", "Micropocesador")
+PC.mostrarProductos("contenedor_placasmadre", "Placa Madre")
+PC.mostrarProductos("contenedor_discos", "Disco")
+PC.mostrarProductos("contenedor_memorias", "Memoria Ram")
+PC.mostrarProductos("contenedor_fuentes", "Fuente")
+PC.mostrarProductos("contenedor_gabinetes", "Gabinete")
 
 //Inicializadores
 
