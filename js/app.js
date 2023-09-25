@@ -79,8 +79,9 @@ class ProductoController{
                 arrayProducto.push(producto)
             }
         })
-        console.log(arrayProducto)
         this.renderizarProductos(arrayProducto, contenedor)
+
+        this.agregarAlCarrito(arrayProducto)
     }
 
     renderizarProductos(arreglo, contenedor){
@@ -93,8 +94,7 @@ class ProductoController{
         })
     }
 
-    agregarAlCarrito(){
-        let arrayProducto = []
+    agregarAlCarrito(arrayProducto){
         arrayProducto.forEach(producto => {
             const btn_ap = document.getElementById(`ap-${producto.id}`)
     
@@ -105,7 +105,8 @@ class ProductoController{
                 carrito.calcularTotal();
                 carrito.mostrarTotal();
             })
-        });
+        })
+        console.log(carrito.total)
     }
 
     async convertirProductosDeAPI(){
@@ -130,7 +131,7 @@ class Carrito {
 
     agregar(producto) {
         if (producto instanceof Producto) {
-            this.listaCarrito.push(producto);
+            this.listaCarrito.push(producto)
         }
         this.calcularTotal();
     }
@@ -152,17 +153,22 @@ class Carrito {
             })
         }
 
-        this.listaCarrito = listaAux;
-        carrito.calcularTotal();
-        carrito.mostrarTotal();
+        this.listaCarrito = listaAux
+        carrito.calcularTotal()
+        carrito.mostrarTotal()
+        carrito.mostrarProducto()
     }
 
     mostrarProducto() {
-        let contenedor_carrito = document.getElementById("contenedor_carrito");
+        let contenedor_carrito = document.getElementById("contenedor_carrito")
+        let mostrarTotalCarrito = document.getElementById("contador_carrito")
+
         contenedor_carrito.innerHTML = ``;
         this.listaCarrito.forEach(producto => {
             contenedor_carrito.innerHTML += producto.descripcionCarrito();
-        });
+        })
+
+        mostrarTotalCarrito.innerHTML = this.listaCarrito.length
     }
 
     vaciarCarrito() {
@@ -186,48 +192,50 @@ class Carrito {
     }
 
     mostrarTotal() {
-        let mostrarTotal = document.getElementById("calcular_total");
-        mostrarTotal.innerHTML = this.total;
+        let mostrarTotal = document.getElementById("calcular_total")
+        
+        mostrarTotal.innerHTML = this.total
     }
 
     mostrarFinalizarCompra() {
         let finalizarCompra = document.getElementById("finalizar_compra");
-        finalizarCompra.addEventListener("click", ()=>{
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: 'btn btn-success',
-                    cancelButton: 'btn btn-danger'
-                },
-                buttonsStyling: false
+            finalizarCompra.addEventListener("click", ()=>{
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                })
+        
+                swalWithBootstrapButtons.fire({
+                    title: 'Finalizar Compra?',
+                    text: "Se direccionara al formulario de Pago",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'No, Seguir Comprando',
+                    cancelButtonText: 'Si, Ir a Pagar',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire(
+                            'Puedes Seguir Comprando',
+                            'Tu carrito sigue ahi',
+                            'success'
+                        )
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                            'Error',
+                            'Todavia no se Programo esto :(',
+                            'error'
+                        )
+                    }
+                })
             })
-    
-            swalWithBootstrapButtons.fire({
-                title: 'Finalizar Compra?',
-                text: "Se direccionara al formulario de Pago",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'No, Seguir Comprando',
-                cancelButtonText: 'Si, Ir a Pagar',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    swalWithBootstrapButtons.fire(
-                        'Puedes Seguir Comprando',
-                        'Tu carrito sigue ahi',
-                        'success'
-                    )
-                } else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                ) {
-                    swalWithBootstrapButtons.fire(
-                        'Error',
-                        'Todavia no se Programo esto :(',
-                        'error'
-                    )
-                }
-            })
-        })
+        
         
     }
 }
@@ -236,8 +244,8 @@ class Carrito {
 
 //Inicializadores
 
-let PC = new ProductoController()
-let carrito = new Carrito()
+const PC = new ProductoController()
+const carrito = new Carrito()
 
 
 PC.mostrarProductos("contenedor_microprocesadores", "Micropocesador")
@@ -247,5 +255,10 @@ PC.mostrarProductos("contenedor_memorias", "Memoria Ram")
 PC.mostrarProductos("contenedor_fuentes", "Fuente")
 PC.mostrarProductos("contenedor_gabinetes", "Gabinete")
 
+carrito.mostrarTotal();
+
+carrito.recuperarStorage();
+carrito.vaciarCarrito();
+carrito.mostrarFinalizarCompra();
 //Inicializadores
 
