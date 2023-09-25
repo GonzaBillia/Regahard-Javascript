@@ -30,21 +30,26 @@ class Producto {
         this.alt = alt;
     }
     descripcionCarrito() {
-        return `<div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="${this.img}" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <p class="card-text">Item: ${this.tipoItem}</p>
-                    <h5 class="card-title">${this.marca}  ${this.modelo}</h5>
-                    <p class="card-text">Cantidad: ${this.cantidadSeleccionados}</p>
-                    <p class="card-text">Precio: $${this.precio}</p>
+        return `<div id="cardCarrito" class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-3 d-flex align-items-center">
+                    <img src="${this.img}" class="img-fluid rounded-start" alt="...">
                 </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <p class="card-text">Item: ${this.tipoItem}</p>
+                        <h5 class="card-title">${this.marca}  ${this.modelo}</h5>
+                        <p class="card-text">Cantidad: ${this.cantidadSeleccionados}</p>
+                        <p class="card-text">Precio: $${this.precio}</p>
+                    </div>
+                </div>
+                <div class="col-md-2 d-flex align-items-center">
+                    <div class="card-body">
+                        <button type="button" class="btn-close" id= "ep-${this.id}"></button>
+                    </div>
+                    </div>
             </div>
-        </div>
-    </div>`
+        </div>`
     }
 
     descripcionProducto() {
@@ -89,7 +94,7 @@ class ProductoController{
 
         arreglo.forEach(producto => {
             if(contenedorProductos != null){
-                contenedorProductos.innerHTML += producto.descripcionProducto();
+                contenedorProductos.innerHTML += producto.descripcionProducto()
             }
         })
     }
@@ -100,13 +105,12 @@ class ProductoController{
     
             btn_ap.addEventListener("click", () => {
                 carrito.agregar(producto);
-                carrito.guardarEnStorage();
-                carrito.mostrarProducto();
-                carrito.calcularTotal();
-                carrito.mostrarTotal();
+                carrito.guardarEnStorage()
+                carrito.mostrarProducto()
+                carrito.calcularTotal()
+                carrito.mostrarTotal()
             })
         })
-        console.log(carrito.total)
     }
 
     async convertirProductosDeAPI(){
@@ -165,20 +169,21 @@ class Carrito {
 
         contenedor_carrito.innerHTML = ``;
         this.listaCarrito.forEach(producto => {
-            contenedor_carrito.innerHTML += producto.descripcionCarrito();
+            contenedor_carrito.innerHTML += producto.descripcionCarrito()
+            
         })
-
+        this.eliminarDelCarrito()
         mostrarTotalCarrito.innerHTML = this.listaCarrito.length
     }
 
     vaciarCarrito() {
         let btnLimpiarCarrito = document.getElementById("limpiar_carrito");
         btnLimpiarCarrito.addEventListener("click", () => {
-            this.listaCarrito = [];
-            this.guardarEnStorage();
-            this.mostrarProducto();
-            this.total = 0;
-            this.mostrarTotal();
+            this.listaCarrito = []
+            this.guardarEnStorage()
+            this.mostrarProducto()
+            this.total = 0
+            this.mostrarTotal()
         })
     }
 
@@ -235,8 +240,22 @@ class Carrito {
                     }
                 })
             })
-        
-        
+    }
+
+    eliminarDelCarrito(){
+        this.listaCarrito.forEach(producto => {
+            const btn_eliminar = document.getElementById(`ep-${producto.id}`)
+
+            btn_eliminar.addEventListener("click", ()=>{
+                let indice = this.listaCarrito.indexOf(producto)
+                this.listaCarrito.splice(indice,1)
+                console.log(this.listaCarrito)
+                this.guardarEnStorage()
+                this.mostrarProducto()
+                this.calcularTotal()
+                this.mostrarTotal()
+            })
+        })
     }
 }
 
@@ -255,10 +274,11 @@ PC.mostrarProductos("contenedor_memorias", "Memoria Ram")
 PC.mostrarProductos("contenedor_fuentes", "Fuente")
 PC.mostrarProductos("contenedor_gabinetes", "Gabinete")
 
-carrito.mostrarTotal();
+carrito.mostrarTotal()
 
-carrito.recuperarStorage();
-carrito.vaciarCarrito();
-carrito.mostrarFinalizarCompra();
+carrito.recuperarStorage()
+carrito.eliminarDelCarrito()
+carrito.vaciarCarrito()
+carrito.mostrarFinalizarCompra()
 //Inicializadores
 

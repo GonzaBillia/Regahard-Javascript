@@ -2,4 +2,10 @@ main{
     margin-top: 120px;
 }
 
+#cardCarrito{
+    min-height: 150px !important;
+    .card-text{
+        margin: 0;
+    }
+}
 

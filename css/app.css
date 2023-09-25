@@ -122,6 +122,13 @@ main {
   margin-top: 120px;
 }
 
+#cardCarrito {
+  min-height: 150px !important;
+}
+#cardCarrito .card-text {
+  margin: 0;
+}
+
 #slider {
   margin-top: 120px;
   margin-bottom: 40px;
@@ -164,10 +171,6 @@ main {
 }
 #categoria-componentes .modal-body .card img {
   margin: 15px 0;
-}
-
-#display-carrito h2 {
-  padding: 25px 0;
 }
 
 /*# sourceMappingURL=app.css.map */
