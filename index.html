@@ -33,9 +33,7 @@
                             </form>
                         </div>
                         <div class="col-8 col-xl-4 user-cart">
-                            <a href="paginas/login.html">
-                                <button class="btn btn-dark btn-user"><i class="bi bi-person-circle"></i></button>
-                            </a>
+                            <button class="btn btn-dark btn-user"><i class="bi bi-person-circle"></i></button>
                             <button class="btn btn-dark position-relative btn-cart" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><i
@@ -52,8 +50,17 @@
                                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="offcanvas-body">
+                                <div id="contenedor_carrito" class="offcanvas-body">
 
+                                </div>
+                                <div id="total" class="p-3 d-flex align-items-end">
+                                    <p>Total: $
+                                    <p id="calcular_total"></p>
+                                    </p>
+                                </div>
+                                <div id="btn_carrito" class="d-flex align-items-end justify-content-evenly p-3 mb-3">
+                                    <button id="limpiar_carrito" class="btn btn-light">Limpiar Carrito</button>
+                                    <button id="finalizar_compra" class="btn btn-light">Finalizar Compra</button>
                                 </div>
                             </div>
                         </div>
