@@ -198,10 +198,11 @@ class Carrito {
         let btnLimpiarCarrito = document.getElementById("limpiar_carrito");
         btnLimpiarCarrito.addEventListener("click", () => {
             this.listaCarrito = []
+            this.resetCantidad()
             this.guardarEnStorage()
             this.recuperarStorage()
             this.mostrarProducto()
-            this.resetCantidad()
+            
             this.total = 0
             
             this.mostrarTotal()
