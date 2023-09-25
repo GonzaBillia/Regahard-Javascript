@@ -19,15 +19,16 @@ async function consumirAPI(){
 //Objetos
 
 class Producto {
-    constructor(id, tipoItem, marca, modelo, precio, stock, img, alt) {
+    constructor(id, tipoItem, marca, modelo, precio, stock, cantidad, img, alt) {
         this.id = id;
         this.tipoItem = tipoItem;
-        this.marca = marca.toUpperCase();
-        this.modelo = modelo.toUpperCase();
-        this.precio = parseFloat(precio);
-        this.stock = parseInt(stock);
-        this.img = img;
-        this.alt = alt;
+        this.marca = marca.toUpperCase()
+        this.modelo = modelo.toUpperCase()
+        this.precio = parseFloat(precio)
+        this.stock = parseInt(stock)
+        this.cantidad = cantidad
+        this.img = img
+        this.alt = alt
     }
     descripcionCarrito() {
         return `<div id="cardCarrito" class="card mb-3" style="max-width: 540px;">
@@ -39,7 +40,7 @@ class Producto {
                     <div class="card-body">
                         <p class="card-text">Item: ${this.tipoItem}</p>
                         <h5 class="card-title">${this.marca}  ${this.modelo}</h5>
-                        <p class="card-text">Cantidad: ${this.cantidadSeleccionados}</p>
+                        <p class="card-text">Cantidad: ${this.cantidad}</p>
                         <p class="card-text">Precio: $${this.precio}</p>
                     </div>
                 </div>
@@ -119,7 +120,7 @@ class ProductoController{
 
         const listaAux = []
         listaProductosJS.forEach(producto => {
-            let nuevoProducto = new Producto(producto.id, producto.tipoItem, producto.marca, producto.modelo, producto.precio, producto.stock, producto.img)
+            let nuevoProducto = new Producto(producto.id, producto.tipoItem, producto.marca, producto.modelo, producto.precio, producto.stock, producto.cantidad, producto.img)
             listaAux.push(nuevoProducto);
         })
         this.listaProductos = listaAux
@@ -129,15 +130,31 @@ class ProductoController{
 
 class Carrito {
     constructor() {
-        this.listaCarrito = [];
-        this.total = 0;
+        this.listaCarrito = []
+        this.total = 0
+        this.cantidadItems = 0
     }
 
-    agregar(producto) {
-        if (producto instanceof Producto) {
-            this.listaCarrito.push(producto)
+    agregar(productoNuevo) {
+        let existe = this.listaCarrito.some(producto => producto.id == productoNuevo.id)
+
+        if(!existe){
+            if (productoNuevo instanceof Producto) {
+                productoNuevo.cantidad++
+                this.cantidadItems++
+                this.listaCarrito.push(productoNuevo)
+            }
+            this.calcularTotal()
+        }else{
+            this.listaCarrito.forEach((producto)=>{
+                if(producto.id == productoNuevo.id){
+                    producto.cantidad++
+                    this.cantidadItems++
+                }
+            })
+            this.calcularTotal()
         }
-        this.calcularTotal();
+        
     }
 
     guardarEnStorage() {
@@ -152,7 +169,7 @@ class Carrito {
 
         if (listaCarritoJS !== null) {
             listaCarritoJS.forEach(producto => {
-                let nuevoProducto = new Producto(producto.id, producto.tipoItem, producto.marca, producto.modelo, producto.precio, producto.stock, producto.img)
+                let nuevoProducto = new Producto(producto.id, producto.tipoItem, producto.marca, producto.modelo, producto.precio, producto.stock, producto.cantidad, producto.img)
                 listaAux.push(nuevoProducto);
             })
         }
@@ -173,7 +190,7 @@ class Carrito {
             
         })
         this.eliminarDelCarrito()
-        mostrarTotalCarrito.innerHTML = this.listaCarrito.length
+        mostrarTotalCarrito.innerHTML = carrito.cantidadItems
     }
 
     vaciarCarrito() {
@@ -182,18 +199,22 @@ class Carrito {
             this.listaCarrito = []
             this.guardarEnStorage()
             this.mostrarProducto()
+            this.resetCantidad()
             this.total = 0
+            this.cantidadItems = 0
             this.mostrarTotal()
         })
     }
 
     calcularTotal() {
-        let acc = 0;
+        let acc = 0
+        let calculo = 0
 
         this.listaCarrito.forEach(producto => {
-            acc += producto.precio;
+            calculo = producto.precio * producto.cantidad
+            acc += calculo
         })
-        this.total = acc;
+        this.total = acc
     }
 
     mostrarTotal() {
@@ -249,12 +270,19 @@ class Carrito {
             btn_eliminar.addEventListener("click", ()=>{
                 let indice = this.listaCarrito.indexOf(producto)
                 this.listaCarrito.splice(indice,1)
-                console.log(this.listaCarrito)
+                this.cantidadItems -= producto.cantidad
+                producto.cantidad = 0
                 this.guardarEnStorage()
                 this.mostrarProducto()
                 this.calcularTotal()
                 this.mostrarTotal()
             })
+        })
+    }
+
+    resetCantidad(){
+        this.listaCarrito.forEach(producto =>{
+            producto.cantidad = 0
         })
     }
 }
