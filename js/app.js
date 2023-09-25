@@ -177,6 +177,7 @@ class Carrito {
         this.listaCarrito = listaAux
         carrito.calcularTotal()
         carrito.mostrarTotal()
+        carrito.calcularCantidadItems()
         carrito.mostrarProducto()
     }
 
@@ -198,10 +199,11 @@ class Carrito {
         btnLimpiarCarrito.addEventListener("click", () => {
             this.listaCarrito = []
             this.guardarEnStorage()
+            this.recuperarStorage()
             this.mostrarProducto()
             this.resetCantidad()
             this.total = 0
-            this.cantidadItems = 0
+            
             this.mostrarTotal()
         })
     }
@@ -278,6 +280,14 @@ class Carrito {
                 this.mostrarTotal()
             })
         })
+    }
+
+    calcularCantidadItems(){
+        let acc = 0
+        this.listaCarrito.forEach(producto =>{
+            acc += producto.cantidad
+        })
+        carrito.cantidadItems = acc
     }
 
     resetCantidad(){
